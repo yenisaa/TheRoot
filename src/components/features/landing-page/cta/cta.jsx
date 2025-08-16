@@ -5,7 +5,10 @@ import EmailForm from "../emailForm";
 
 function CTA() {
   return (
-    <section className="py-14 sm:pt-0 sm:pb-24 bg-background sm:bg-white">
+    <section
+      id="users"
+      className="py-14 sm:pt-0 sm:pb-24 bg-background sm:bg-white"
+    >
       <div className="container">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}

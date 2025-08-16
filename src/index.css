@@ -13,24 +13,12 @@
   src: url("./assets/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf");
 }
 
-@font-face {
-  font-family: eudoxus700;
-  src: url("./assets/fonts/EudoxusSans-Bold-BF659b6cb1408e5.ttf");
-}
-
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* @custom-variant dark (&:is(.dark *)); */
-
 @theme {
   --font-eudoxus400: eudoxus400, sans-serif;
-  --font-eudoxus400: eudoxus400, sans-serif;
   --font-eudoxus500: eudoxus500, sans-serif;
-  --font-eudoxus700: eudoxus700, sans-serif;
-
-  --breakpoint-xs: 480px;
-  --breakpoint-mlg: 992px;
   --font-eudoxus700: eudoxus700, sans-serif;
 
   --breakpoint-xs: 480px;
@@ -99,6 +87,7 @@
   --tertiary: oklch(0.4524 0.0528 81.15); /* #655333 */
   --tertiary: oklch(0.4524 0.0528 81.15); /* #655333 */
   --label: oklch(0.1408 0.0044 285.82); /* #09090b */
+  --inactive: oklch(78.97% 0.112 77.99); /* #deae73 */
   --placeholder: oklch(0.5983 0.0383 82.78); /* #8B7E66 */
   --input-border: oklch(0.9207 0.0347 74.4); /* #F3E2CC */
 
@@ -128,64 +117,6 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-}
-
-/* .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-} */
-
-.font-stylish {
-  font-feature-settings: "salt";
-}
-
-.container {
-  max-width: 1280px;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    padding-left: 3.5rem;
-    padding-right: 3.5rem;
-  }
-}
-@media (min-width: 1024px) {
-  .container {
-    padding-left: 100px;
-    padding-right: 100px;
-  }
 }
 
 .font-stylish {

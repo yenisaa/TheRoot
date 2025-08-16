@@ -10,7 +10,7 @@ const slides = [
     title: (
       <>
         Kaabo <br />
-        <span className="text-secondary-foreground">Welcome</span> Ndewo
+        <span className="text-background">Welcome</span> Ndewo
       </>
     ),
   },
@@ -19,14 +19,13 @@ const slides = [
     title: (
       <>
         The best way to <br />
-        learn{" "}
-        <span className="text-secondary-foreground">African Languages</span>
+        learn <span className="text-background">African Languages</span>
       </>
     ),
   },
 ];
 
-export default function Carousel() {
+export default function Carousel2() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 = left, 1 = right
   const [touchStartX, setTouchStartX] = useState(null);
@@ -106,9 +105,9 @@ export default function Carousel() {
             <img
               src={slides[currentIndex].img}
               alt="slide"
-              className="w-full h-[103px] md:h-[160px] object-contain"
+              className="w-full h-[72px] object-contain"
             />
-            <h3 className="pt-4 text-[32px] xs:text-[32px] sm:text-[30px] font-eudoxus400 text-center font-stylish leading-[1.1]">
+            <h3 className="pt-4 text-accent text-2xl xs:text-3xl font-eudoxus400 text-center font-stylish leading-[1.1]">
               {slides[currentIndex].title}
             </h3>
           </motion.div>

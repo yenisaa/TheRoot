@@ -53,6 +53,9 @@ importers:
       react-router-dom:
         specifier: ^7.7.1
         version: 7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      react-router-hash-link:
+        specifier: ^2.4.3
+        version: 2.4.3(react-router-dom@7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       tailwind-merge:
         specifier: ^3.3.1
         version: 3.3.1
@@ -1850,6 +1853,12 @@ packages:
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
+
+  react-router-hash-link@2.4.3:
+    resolution: {integrity: sha512-NU7GWc265m92xh/aYD79Vr1W+zAIXDWp3L2YZOYP4rCqPnJ6LI6vh3+rKgkidtYijozHclaEQTAHaAaMWPVI4A==}
+    peerDependencies:
+      react: '>=15'
+      react-router-dom: '>=4'
 
   react-router@7.7.1:
     resolution: {integrity: sha512-jVKHXoWRIsD/qS6lvGveckwb862EekvapdHJN/cGmzw40KnJH5gg53ujOJ4qX6EKIK9LSBfFed/xiQ5yeXNrUA==}
@@ -3913,6 +3922,12 @@ snapshots:
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
       react-router: 7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+
+  react-router-hash-link@2.4.3(react-router-dom@7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1):
+    dependencies:
+      prop-types: 15.8.1
+      react: 19.1.1
+      react-router-dom: 7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
   react-router@7.7.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:

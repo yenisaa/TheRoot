@@ -12,9 +12,7 @@ import Commitment from "./pages/Commitment";
 import Welcome from "./pages/Welcome";
 
 import GetStarted1 from "./pages/getStartedpage1";
-{
-  /* import getStarted2 from "./pages/getStartedpage2"; */
-}
+import LoginStep from "./pages/loginPageMain";
 
 import CreateAccount from "./pages/CreateAccount";
 import SignIn from "./pages/SignIn";
@@ -29,17 +27,17 @@ function App() {
         </Route>
 
         {/* Chiebuka */}
-        <Route path="create-account" element={<CreateAccount />} />
-        <Route path="sign-in" element={<SignIn />} />
-        <Route path="verify-email" element={<VerifyEmail />} />
+        <Route path="/create-account" element={<CreateAccount />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
 
         {/* Ope */}
-        <Route path="customisation1" element={<CustomisationStep1 />} />
-        <Route path="customisation2" element={<CustomisationStep2 />} />
+        <Route path="/customisation1" element={<CustomisationStep1 />} />
+        <Route path="/customisation2" element={<CustomisationStep2 />} />
 
         {/* Ola */}
-        <Route path="getStarted1" element={<GetStarted1 />} />
-        {/* <Route path="/getStarted2" element={<getStarted2 />} />*/}
+        <Route path="/getStarted1" element={<GetStarted1 />} />
+        <Route path="/login" element={<LoginStep />} />
 
         {/* Isaiah Ayomide Yenou */}
         <Route path="/welcome" element={<Welcome />} />

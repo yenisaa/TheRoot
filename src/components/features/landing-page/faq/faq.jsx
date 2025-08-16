@@ -5,7 +5,7 @@ import FaqItems from "./faqItems";
 
 function FAQs() {
   return (
-    <section className="pt-24 pb-[72px] bg-white">
+    <section id="faqs" className="pt-24 pb-[72px] bg-white">
       <div className="max-w-[714px] m-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

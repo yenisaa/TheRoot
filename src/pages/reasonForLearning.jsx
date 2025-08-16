@@ -1,7 +1,7 @@
 import OnboardingNav from "@/components/ui/onboardingNav";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import NavigationLinks from "@/components/features/onboarding/navLinks";
 import Logo from "@/components/ui/logo";
@@ -11,10 +11,11 @@ import Culture from "../assets/icons/culture-icon.svg";
 import Career from "../assets/icons/career-icon.svg";
 
 function ReasonForLearning() {
-  const navigate = useNavigate();
   const [selected, setSelected] = useState("");
 
-  const handleSelection = () => navigate("/commitment");
+  const handleSelection = () => {
+    // Post user selection to backend function
+  };
 
   const options = [
     {
@@ -40,59 +41,67 @@ function ReasonForLearning() {
   ];
 
   return (
-    <section className="h-screen w-screen bg-primary md:bg-background flex flex-col items-center">
-      {/* Logo */}
-      <div className="hidden md:block py-10 self-start">
-        <Logo />
-      </div>
-
-      {/* Main box */}
-      <div className="w-full max-w-[572px] md:h-[572px] h-full rounded-[28px] md:bg-primary flex flex-col justify-between px-6 py-[12px]">
-        {/* Navigation */}
-        <div className="w-full flex justify-between items-center min-h-[40px]">
-          <OnboardingNav />
-          <NavigationLinks isDisabled={!selected} />
+    <section className="h-screen w-full bg-primary md:bg-background overflow-auto">
+      <div className="onboarding-container">
+        <div className="hidden md:block py-10 px-8 self-start">
+          <Logo />
         </div>
 
-        {/* Content */}
-        <div className="flex flex-col justify-between flex-1">
-          <div className="mb-[32px]">
-            <h1 className="text-secondary text-2xl text-center">
-              Why are <br /> you learning Igbo?
-            </h1>
-          </div>
+        <div className="max-w-[572px] w-full m-auto">
+          <div className="w-full h-full p-6 rounded-2xl md:bg-primary flex flex-col">
+            <div className="w-full flex justify-between items-center">
+              <OnboardingNav />
+              <NavigationLinks />
+            </div>
 
-          <div className="flex flex-col items-center w-full">
-            <p className="text-background mb-[8px] self-start">
-              I am learning for ...
-            </p>
-            {options.map((option) => (
-              <Button
-                key={option.id}
-                onClick={() => setSelected(option.id)}
-                className={cn(
-                  "w-full h-[64px] rounded-md border text-background flex justify-start mb-[8px]",
-                  selected === option.id
-                    ? "bg-label border-ring text-primary"
-                    : "bg-card border-secondary/30 text-background hover:border-secondary/30"
-                )}
-              >
-                {option.icon}
-                {option.label}
-              </Button>
-            ))}
-          </div>
-        </div>
+            <div className="w-full min-h-[calc(100vh-124px)] md:min-h-auto mt-6 md:mt-10 flex flex-col justify-between">
+              <div className=" flex flex-col justify-between">
+                <div className="mb-[32px]">
+                  <h1 className="text-secondary text-2xl text-center">
+                    Why are <br /> you learning Igbo?
+                  </h1>
+                </div>
 
-        {/* Continue Button */}
-        <div className="w-full mt-4">
-          <Button
-            className="w-full max-w-full h-[64px] hover:bg-secondary/90"
-            onClick={handleSelection}
-            disabled={!selected}
-          >
-            Continue
-          </Button>
+                <div className="flex flex-col items-center w-full">
+                  <p className="text-background mb-[8px] self-start">
+                    I am learning for ...
+                  </p>
+                  <div className="w-full flex flex-col gap-2">
+                    {options.map((option) => (
+                      <Button
+                        key={option.id}
+                        onClick={() => setSelected(option.id)}
+                        className={cn(
+                          "w-full h-16 rounded-md border text-background flex justify-start",
+                          selected === option.id
+                            ? "bg-label border-ring text-primary"
+                            : "bg-card border-secondary/30 text-background hover:border-secondary/30"
+                        )}
+                      >
+                        {option.icon}
+                        {option.label}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="w-full md:mt-8">
+                <Link
+                  to={selected ? "/commitment" : "#"}
+                  className="block w-full"
+                >
+                  <Button
+                    className="w-full h-[64px] hover:bg-secondary/90"
+                    onClick={handleSelection}
+                    disabled={!selected}
+                  >
+                    Continue
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

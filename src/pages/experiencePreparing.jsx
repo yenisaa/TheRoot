@@ -1,49 +1,39 @@
-import OnboardingNav from "@/components/ui/onboardingNav";
-import { LoaderCircle } from "lucide-react";
-import { Link } from "react-router-dom";
 import NavigationLinks from "@/components/features/onboarding/navLinks";
-import { cn } from "@/lib/utils";
+import OnboardingNav from "@/components/ui/onboardingNav";
+import Root from "../assets/images/a-root.png";
+import Spinner from "@/components/ui/spinner";
 import Logo from "@/components/ui/logo";
-import Root from "../assets/images/Root.png";
 
 function ExperiencePreparing() {
   return (
-    <section className="h-screen w-screen bg-primary md:bg-background flex flex-col items-center onboarding-container">
-
-      <div className="hidden md:block py-10  self-start" role="Logo section">
-        <Logo />
-      </div>
-
-      <div className="w-full max-w-[572px] h-full md:h-[572px] rounded-[28px] md:bg-primary flex flex-col justify-between px-6 py-[12px]" role="container">
-
-        <div className="w-full flex justify-between items-center" role="nav container">
-          {/* Navigation */}
-          <Link to="/commitment">
-            <OnboardingNav />
-          </Link>
-          <div className="">
-            <NavigationLinks />
-          </div>
+    <section className="h-screen w-full bg-primary md:bg-background overflow-auto">
+      <div className="onboarding-container">
+        <div className="hidden md:block py-10 px-8 self-start">
+          <Logo />
         </div>
-        <div className="w-full max-w-[572px] md:-h-[572px] rounded-[28px] md:bg-primary flex flex-col justify-between px-6 py-[12px]" role="main box">
-          <div className="flex flex-col items-center justify-center">
-            {/* Rootie Image */}
-            <img src={Root} alt="Rootie Image" className="w-50" />
 
-            {/* Content */}
-            <h1 className="text-secondary text-2xl text-center font-stylish">
-              <span className="text-accent">Rootie is</span> preparing your
-              learning experience.
-            </h1>
+        <div className="max-w-[572px] w-full m-auto">
+          <div className="w-full h-full p-6 rounded-2xl md:bg-primary flex flex-col">
+            <div className="w-full flex justify-between items-center">
+              <OnboardingNav />
+              <NavigationLinks />
+            </div>
+
+            <div className="mt-8 md:mt-16">
+              <div className="max-w-[400px] m-auto flex flex-col items-center gap-[33px]">
+                <img src={Root} alt="Rootie Image" className="h-[103px]" />
+
+                <h1 className="text-secondary text-2xl text-center font-stylish">
+                  <span className="text-accent">Rootie is</span> preparing your
+                  learning experience.
+                </h1>
+              </div>
+
+              <div className="mt-8 md:mt-20 mb-1 md:mb-16 flex items-center justify-center">
+                <Spinner />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="self-center">
-          {/* Loading Spinner - Skeleton */}
-          <LoaderCircle
-            color="#C36C00"
-            size="50"
-            className={cn("animate-spin")}
-          />
         </div>
       </div>
     </section>

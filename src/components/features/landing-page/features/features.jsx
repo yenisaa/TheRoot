@@ -5,7 +5,7 @@ import { cards } from "../data";
 
 function Features() {
   return (
-    <section className="py-20 bg-primary">
+    <section id="features" className="py-20 bg-primary">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

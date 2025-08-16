@@ -5,7 +5,7 @@ import CultureForm from "./cultureForm";
 
 function Culture() {
   return (
-    <section className="py-[42px] sm:py-[95px] relative">
+    <section id="waitlist" className="py-[42px] sm:py-[95px] relative">
       <div
         style={{
           backgroundImage: `linear-gradient(180deg, #3E2800 0%, rgba(62, 40, 0, 0) 100%), url(${bgImage})`,
